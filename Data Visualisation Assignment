@@ -1,0 +1,18 @@
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import plotly.express as px
+from plotly.offline import iplot
+import plotly as py
+import plotly.tools as tls
+import cufflinks as cf
+
+cf.go_offline()
+py.offline.init_notebook_mode(connected = True)
+
+df = sns.load_dataset('iris')
+df.head()
+
+px.scatter_3d(data_frame = df, x = 'petal_length', y = 'petal_width', z = 'sepal_length', size = 'sepal_width', color = 'species', title = '3D of Irirs Dataset choosing Petal length, Petal width, Sepal length')
+
+px.scatter_3d(data_frame = df, x = 'petal_length', y = 'petal_width', z = 'sepal_width', size = 'sepal_length', color = 'species', title = '3D of Irirs Dataset choosing Petal length, Petal width, Sepal width')
